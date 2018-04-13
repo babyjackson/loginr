@@ -1,0 +1,133 @@
+<!DOCTYPE html>
+<html>
+	<head>
+	  <meta charset="UTF-8">
+	  <meta name="viewport" content="width=device-width,initial-scale=1.0,maximum-scale=1,user-scalable=no">
+	  <meta name="renderer" content="webkit">
+	  <meta http-equiv="Cache-Control" content="no-siteapp"/>
+	  <!-- 启用360浏览器的极速模式(webkit) -->
+	  <meta name="renderer" content="webkit">
+	  <!-- 避免IE使用兼容模式 -->
+	  <meta http-equiv="X-UA-Compatible" content="IE=edge">
+	  <!-- 针对手持设备优化，主要是针对一些老的不识别viewport的浏览器，比如黑莓 -->
+	  <meta name="HandheldFriendly" content="true">
+	  <!-- 微软的老式浏览器 -->
+	  <meta name="MobileOptimized" content="320">
+	  <!-- uc强制竖屏 -->
+	  <meta name="screen-orientation" content="portrait">
+	  <!-- QQ强制竖屏 -->
+	  <meta name="x5-orientation" content="portrait">
+	  <!-- UC强制全屏 -->
+	  <meta name="full-screen" content="yes">
+	  <!-- QQ强制全屏 -->
+	  <meta name="x5-fullscreen" content="true">
+	  <!-- UC应用模式 -->
+	  <meta name="browsermode" content="application">
+	  <!-- QQ应用模式 -->
+	  <meta name="x5-page-mode" content="app">
+	  <!-- windows phone 点击无高光 -->
+	  <meta name="msapplication-tap-highlight" content="no">
+	  <title>登录</title>
+	  <link rel="stylesheet" href="css/loginr.css" />
+	  <script type="text/javascript" src="js/jquery-1.8.3.min.js"></script>
+	</head>
+	<script>
+		(function (doc, win) {
+	        var docEl = doc.documentElement,
+	            resizeEvt = 'orientationchange' in window ? 'orientationchange' : 'resize',
+	            recalc = function () {
+	                var clientWidth = docEl.clientWidth;
+	                if (!clientWidth) return;
+	                if(clientWidth>=750){
+	                    docEl.style.fontSize = '100px';
+	                }else{
+	                    docEl.style.fontSize = 100 * (clientWidth / 750) + 'px';
+	                }
+	            };
+	
+	        if (!doc.addEventListener) return;
+	        win.addEventListener(resizeEvt, recalc, false);
+	        doc.addEventListener('DOMContentLoaded', recalc, false);
+	    })(document, window);
+	</script>
+	<body>
+		<div class="loginban">
+			<div class="h-130"></div>
+			<figure>
+				<img src="img/loginban.png"/>
+			</figure>
+			<div class="h-130"></div>
+		</div>
+		<!--con-->
+		<div class="loginConW">
+			<div class="loginConP">
+				<div class="h-85"></div>
+				<div class="loginW">
+					<form id="loginForm">
+						<div class="h-70"></div>
+						<div class="titw">登录你的账号</div>
+						<div class="h-35"></div>
+						<div class="section">
+							<input type="text" name="tel" placeholder="输入您的用户名或手机号码" />
+						</div>
+						<div class="h-20"></div>
+						<div class="section">
+							<input type="password" name="psd" placeholder="输入登录密码" />
+						</div>
+						<div class="h-25"></div>
+						<div class="remW clearfix">
+							<div class="rem clearfix fl">
+								<small class="fl checked"><input type="checkbox" name="remember" checked="checked"/></small>
+								记住我
+							</div>
+							<div class="forget fr"><a href="javascript:;">忘记密码</a></div>
+						</div>
+						<div class="h-30"></div>
+						<div class="loginbtn">
+							<a href="javascript:;">登录</a>
+						</div>
+						<div class="noAccount">还没有账号？<a href="javascript:;">立即注册</a></div>
+					</form>
+				</div>
+				<div class="h-400"></div>
+			</div>
+		</div>
+	</body>
+	<script>
+		$(".loginW .remW small").click(function(){
+			$(this).toggleClass("checked");
+		});
+		$(".loginbtn").click(function(){
+			loginFun();
+		});
+		var loginFun = function(){
+			var formLogin = document.getElementById("loginForm");
+			var tel = formLogin.tel.value;
+			var psd = formLogin.psd.value;
+			var warn = " ";
+			if(tel == ""){
+				warn = "用户名不能为空";
+				console.log(warn);
+				return;
+			}
+			if(psd == ""){
+				warn = "登录密码不能为空";
+				console.log(warn);
+				return;
+			}
+			if(tel !="" && psd != ""){
+				$.ajax({
+					type:"post",
+					url:"",
+					dataType:"json",
+					data:{tel:tel,psd:psd},
+					async:true,
+					success:function(data){
+						
+					}
+				})
+			}
+		}
+		
+	</script>
+</html>

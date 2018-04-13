@@ -1,0 +1,485 @@
+*{
+	margin: 0rem;
+	padding: 0rem;
+	list-style: none;
+	font-family: "微软雅黑";
+	font-size: 0.24rem;
+	text-decoration: none;
+}
+body{
+	width: 7.5rem;
+    margin: 0 auto;
+   position: relative;
+}
+.fl{
+	float: left;
+}
+.fr{
+	float: right;
+}
+.clearfix::after{
+	clear: both;
+	content: "";
+	height: 0;
+	display: block;
+}
+.h-130{
+	height: 1.3rem;
+}
+.h-140{
+	height: 1.4rem;
+}
+.h-85{
+	height: 0.85rem;
+}
+.h-70{
+	height: 0.7rem;
+}
+.h-35{
+	height: 0.35rem;
+}
+.h-20{
+	height: 0.2rem;
+}
+.h-30{
+	height: 0.2rem;
+}
+.h-25{
+	height: 0.25rem;
+}
+.h-50{
+	height: 0.5rem;
+}
+.h-400{
+	height: 4rem;
+}
+.loginban{
+	width: 7.5rem;
+	height: 3.85rem;
+	background: #7f7f7f;
+	overflow: hidden;
+}
+.loginban figure{
+	width: 4rem;
+	height: 1.2rem;
+	margin: 0 auto;
+	display: block;
+}
+.loginban figure img{
+	width: 100%;
+}
+.loginConW{
+	position: relative;
+	width: 7.5rem;
+	height: 9.5rem;
+	display: block;
+	background: url(../img/loginbg.jpg) no-repeat left top;
+	background-size: 7.5rem 9.5rem;
+}
+.loginW{
+	width: 3.2rem;
+	height: 4.6rem;
+	display: block;
+	background:rgba(255,255,255,0.85);
+	margin: 0 auto;
+	border-radius: 2px;
+	padding: 0 0.9rem;
+}
+.loginW .titw{
+	font-size: 0.24rem;
+	color: #000000;
+	text-align: center;
+}
+.loginW .section{
+	width: 3.2rem;
+	height: 0.5rem;
+	display: block;
+	border-radius: 0.08rem;
+	overflow: hidden;
+	background: #ffffff;
+}
+.loginW .section input{
+	display: block;
+	width: 3.2rem;
+	height: 0.5rem;
+	background: rgba(0,0,0,0);
+	border: 0;
+	outline: 0;
+	font-size: 0.14rem;
+	color: #717171;
+	text-indent:0.2rem;
+}
+.loginW .remW{
+	width: 3.2rem;
+	height: 0.2rem;
+	font-size: 0.14rem;
+}
+.loginW .remW .rem{
+	font-size: 0.14rem;
+	color: #717171;
+	line-height: 0.17rem;
+}
+.loginW .remW .rem small{
+	width: 0.17rem;
+	height: 0.17rem;
+	display: block;
+	background: #fff;
+	margin-right: 0.12rem;
+}
+.loginW .remW .rem small.checked{
+	background: #fff url(../img/checked_l.png) no-repeat center;
+	background-size: 0.17rem 0.17rem;
+}
+.loginW .remW .rem small input{
+	width: 0.17rem;
+	height: 0.17rem;
+	display: block;
+	outline: 0;
+	border: 0;
+	opacity: 0;
+}
+.loginW .forget{
+	display:block;
+}
+.loginW .forget a{
+	font-size: 0.14rem;
+	color: #6391e6;
+	line-height: 0.17rem;
+	display: block;
+}
+.loginbtn{
+	width: 1.4rem;
+	height: 0.4rem;
+	border-radius: 0.2rem;
+	margin: 0 auto;
+	overflow: hidden;
+}
+.loginbtn a{
+	display: block;
+	background: #6391e6;
+	width: 1.4rem;
+	height: 0.4rem;
+	background: #6391e6;
+	font-size: 0.18rem;
+	color: #ffffff;
+	letter-spacing: 0.05rem;
+	border: 0;
+	outline: 0;
+	text-align: center;
+	line-height: 0.4rem;
+}
+.noAccount{
+	text-align: center;
+	height: 0.35rem;
+	line-height: 0.35rem;
+	font-size: 0.14rem;
+	color: #717171;
+}
+.noAccount a{
+	font-size: 0.14rem;
+	color: #6391e6;
+}
+
+/***找回密码***/
+.backConW{
+	position: relative;
+	width: 7.5rem;
+	height: 9.5rem;
+	display: block;
+	background: url(../img/loginbg.jpg) no-repeat left top;
+	background-size: 7.5rem 9.5rem;
+}
+.backpsdW{
+	width: 3.2rem;
+	height: 4.6rem;
+	display: block;
+	background:rgba(255,255,255,0.85);
+	margin: 0 auto;
+	border-radius: 2px;
+	padding: 0 0.9rem;
+}
+.backpsdW .titw{
+	font-size: 0.24rem;
+	color: #000000;
+	text-align: center;
+}
+.backpsdW .section{
+	width: 3.2rem;
+	height: 0.5rem;
+	display: block;
+	border-radius: 0.08rem;
+	overflow: hidden;
+	background: #ffffff;
+}
+.backpsdW .section input{
+	display: block;
+	width: 3.2rem;
+	height: 0.5rem;
+	background: rgba(0,0,0,0);
+	border: 0;
+	outline: 0;
+	font-size: 0.14rem;
+	color: #717171;
+	text-indent:0.2rem;
+}
+.backpsdW .code{
+	width: 3.2rem;
+	height: 0.5rem;
+	display: block;
+	border-radius: 0.08rem;
+	overflow: hidden;
+	background: #ffffff;
+	position: relative;
+}
+.backpsdW .code .inp{
+	width: 2.2rem;
+	height: 0.5rem;
+	text-indent: 0.2rem;
+	background: rgba(0,0,0,0);
+	border: 0;
+	outline: 0;
+	font-size: 0.14rem;
+	color: #717171;
+}
+.backpsdW .code .gaincode{
+	width: 0.85rem;
+	height: 0.25rem;
+	background: #6391e6;
+	line-break: 0.25rem;
+	outline: 0;
+	border: 0;
+	overflow: hidden;
+	margin: 0.13rem 0.15rem 0 0;
+}
+.backpsdW .code .gaincode input{
+	font-size: 0.12rem;
+	color: #ffffff;
+	width: 0.85rem;
+	height: 0.25rem;
+	background:rgba(0,0,0,0);
+	outline: 0;
+	display: block;
+	border: 0;
+}
+.backbtn{
+	width: 1.4rem;
+	height: 0.4rem;
+	border-radius: 0.2rem;
+	margin: 0 auto;
+	overflow: hidden;
+}
+.backbtn a{
+	display: block;
+	background: #6391e6;
+	width: 1.4rem;
+	height: 0.4rem;
+	background: #6391e6;
+	font-size: 0.18rem;
+	color: #ffffff;
+	letter-spacing: 0.05rem;
+	border: 0;
+	outline: 0;
+	text-align: center;
+	line-height: 0.4rem;
+}
+
+/***找回密码成功***/
+.succbackW{
+	position: relative;
+	width: 7.5rem;
+	height: 9.5rem;
+	display: block;
+	background: url(../img/loginbg.jpg) no-repeat left top;
+	background-size: 7.5rem 9.5rem;
+}
+.successb{
+	width: 3.2rem;
+	height: 4.6rem;
+	display: block;
+	background:rgba(255,255,255,0.85);
+	margin: 0 auto;
+	border-radius: 2px;
+	padding: 0 0.9rem;
+}
+.succbackW .titw{
+	font-size: 0.24rem;
+	color: #000000;
+	text-align: center;
+}
+.successb .rightlg{
+	width: 0.95rem;
+	height: 0.95rem;
+	margin: 0 auto;
+}
+.successb .rightlg img{
+	width: 100%;
+}
+.successb .text{
+	font-size: 0.16rem;
+	color: #414141;
+	text-align: center;
+	line-height: 0.16rem;
+}
+.nowloginbtn{
+	width: 1.45rem;
+	height: 0.45rem;
+	border-radius: 0.2rem;
+	display: block;
+	margin: 0 auto;
+	background:#6391e6 ;
+	overflow: hidden;
+	font-size: 0.18rem;
+	color: #ffffff;
+	text-align: center;
+	line-height: 0.45rem;
+}
+
+/***注册****/
+.registerConW{
+	position: relative;
+	width: 7.5rem;
+	height: 9.5rem;
+	display: block;
+	background: url(../img/loginbg.jpg) no-repeat left top;
+	background-size: 7.5rem 9.5rem;
+}
+.registerW{
+	width: 3.2rem;
+	display: block;
+	background:rgba(255,255,255,0.85);
+	margin: 0 auto;
+	border-radius: 2px;
+	padding: 0 0.9rem;
+}
+.registerW .titChange{
+	height: 0.53rem;
+}
+.registerW .titChange li{
+	cursor: pointer;
+	width: 1.18rem;
+	overflow: hidden;
+	height: 0.5rem;
+	font-size: 0.22rem;
+	color: #bbbbbb;
+	line-height: 0.5rem;
+	text-align: center;
+}
+.registerW .titChange li.on{
+	color: #000000;
+	border-bottom: 0.03rem solid #6391e6;
+}
+/**个人**/
+.register .section{
+	width: 3.2rem;
+	height: 0.5rem;
+	display: block;
+	border-radius: 0.08rem;
+	overflow: hidden;
+	background: #ffffff;
+}
+.register .section input{
+	display: block;
+	width: 3.2rem;
+	height: 0.5rem;
+	background: rgba(0,0,0,0);
+	border: 0;
+	outline: 0;
+	font-size: 0.14rem;
+	color: #717171;
+	text-indent:0.2rem;
+}
+.register .code{
+	width: 3.2rem;
+	height: 0.5rem;
+	display: block;
+	border-radius: 0.08rem;
+	overflow: hidden;
+	background: #ffffff;
+	position: relative;
+}
+.register .code .inp{
+	width: 2.2rem;
+	height: 0.5rem;
+	text-indent: 0.2rem;
+	background: rgba(0,0,0,0);
+	border: 0;
+	outline: 0;
+	font-size: 0.14rem;
+	color: #717171;
+}
+.register .code .gaincode{
+	width: 0.85rem;
+	height: 0.25rem;
+	background: #6391e6;
+	line-break: 0.25rem;
+	outline: 0;
+	border: 0;
+	overflow: hidden;
+	margin: 0.13rem 0.15rem 0 0;
+}
+.register .code .gaincode input{
+	font-size: 0.12rem;
+	color: #ffffff;
+	width: 0.85rem;
+	height: 0.25rem;
+	background:rgba(0,0,0,0);
+	outline: 0;
+	display: block;
+	border: 0;
+}
+.register .agreed{
+	width: 3.2rem;
+	line-height: 0.3rem;
+	font-size: 0.12rem;
+	color: #717171;
+}
+.register .agreed a{
+	color: #6391e6;
+	line-height: 0.2rem;
+	font-size: 0.12rem;
+}
+.register .agreed small{
+	width: 0.17rem;
+	height: 0.17rem;
+	display: block;
+	background: #fff;
+	margin-top: 0.06rem;
+	margin-right: 0.12rem;
+}
+.register .agreed small.checked{
+	background: #fff url(../img/checked_l.png) no-repeat center;
+	background-size: 0.17rem 0.17rem;
+}
+.register .agreed small input{
+	width: 0.17rem;
+	height: 0.17rem;
+	display: block;
+	outline: 0;
+	border: 0;
+	opacity: 0;
+}
+.registerbtn{
+	width: 1.4rem;
+	height: 0.4rem;
+	border-radius: 0.2rem;
+	margin: 0 auto;
+	overflow: hidden;
+}
+.registerbtn a{
+	display: block;
+	background: #6391e6;
+	width: 1.4rem;
+	height: 0.4rem;
+	background: #6391e6;
+	font-size: 0.18rem;
+	color: #ffffff;
+	letter-spacing: 0.05rem;
+	border: 0;
+	outline: 0;
+	text-align: center;
+	letter-spacing: 0;
+	line-height: 0.4rem;
+}
+.register .choose input{
+	text-align: center;
+}

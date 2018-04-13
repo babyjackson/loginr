@@ -1,0 +1,80 @@
+<!DOCTYPE html>
+<html>
+	<head>
+		<meta charset="UTF-8">
+		<meta name="viewport" content="width=device-width,initial-scale=1.0,maximum-scale=1,user-scalable=no">
+		<meta name="renderer" content="webkit">
+		<meta http-equiv="Cache-Control" content="no-siteapp"/>
+		  <!-- 启用360浏览器的极速模式(webkit) -->
+		<meta name="renderer" content="webkit">
+		  <!-- 避免IE使用兼容模式 -->
+		<meta http-equiv="X-UA-Compatible" content="IE=edge">
+		  <!-- 针对手持设备优化，主要是针对一些老的不识别viewport的浏览器，比如黑莓 -->
+		<meta name="HandheldFriendly" content="true">
+		  <!-- 微软的老式浏览器 -->
+		<meta name="MobileOptimized" content="320">
+		  <!-- uc强制竖屏 -->
+		<meta name="screen-orientation" content="portrait">
+		  <!-- QQ强制竖屏 -->
+		<meta name="x5-orientation" content="portrait">
+		  <!-- UC强制全屏 -->
+		<meta name="full-screen" content="yes">
+		  <!-- QQ强制全屏 -->
+		<meta name="x5-fullscreen" content="true">
+		  <!-- UC应用模式 -->
+		<meta name="browsermode" content="application">
+		  <!-- QQ应用模式 -->
+		<meta name="x5-page-mode" content="app">
+		  <!-- windows phone 点击无高光 -->
+		<meta name="msapplication-tap-highlight" content="no">
+		<title>找回密码</title>
+		<script>
+			(function (doc, win) {
+		        var docEl = doc.documentElement,
+		            resizeEvt = 'orientationchange' in window ? 'orientationchange' : 'resize',
+		            recalc = function () {
+		                var clientWidth = docEl.clientWidth;
+		                if (!clientWidth) return;
+		                if(clientWidth>=750){
+		                    docEl.style.fontSize = '100px';
+		                }else{
+		                    docEl.style.fontSize = 100 * (clientWidth / 750) + 'px';
+		                }
+		            };
+		
+		        if (!doc.addEventListener) return;
+		        win.addEventListener(resizeEvt, recalc, false);
+		        doc.addEventListener('DOMContentLoaded', recalc, false);
+		    })(document, window);
+		</script>
+		<link rel="stylesheet" href="css/loginr.css" />
+		<script type="text/javascript" src="js/jquery-1.8.3.min.js"></script>
+	</head>
+	<body>
+		<div class="loginban">
+			<div class="h-130"></div>
+			<figure>
+				<img src="img/loginban.png"/>
+			</figure>
+			<div class="h-130"></div>
+		</div>
+		<div class="succbackW">
+			<div class="h-85"></div>
+			<div class="successb">
+				<div class="h-50"></div>
+				<div class="titw">找回账号密码</div>
+				<div class="h-70"></div>
+				<div class="rightlg">
+					<img src="img/rightgl.png
+						"/>
+				</div>
+				<div class="h-30"></div>
+				<div class="text">
+					设置密码成功！
+				</div>
+				<div class="h-50"></div>
+				<a href="javascript:;" class="nowloginbtn">马上登录</a>
+			</div>
+		</div>
+	</body>
+</html>

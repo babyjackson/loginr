@@ -1,0 +1,165 @@
+<!DOCTYPE html>
+<html>
+	<head>
+		<meta charset="UTF-8">
+		<meta name="viewport" content="width=device-width,initial-scale=1.0,maximum-scale=1,user-scalable=no">
+		<meta name="renderer" content="webkit">
+		<meta http-equiv="Cache-Control" content="no-siteapp"/>
+		  <!-- 启用360浏览器的极速模式(webkit) -->
+		<meta name="renderer" content="webkit">
+		  <!-- 避免IE使用兼容模式 -->
+		<meta http-equiv="X-UA-Compatible" content="IE=edge">
+		  <!-- 针对手持设备优化，主要是针对一些老的不识别viewport的浏览器，比如黑莓 -->
+		<meta name="HandheldFriendly" content="true">
+		  <!-- 微软的老式浏览器 -->
+		<meta name="MobileOptimized" content="320">
+		  <!-- uc强制竖屏 -->
+		<meta name="screen-orientation" content="portrait">
+		  <!-- QQ强制竖屏 -->
+		<meta name="x5-orientation" content="portrait">
+		  <!-- UC强制全屏 -->
+		<meta name="full-screen" content="yes">
+		  <!-- QQ强制全屏 -->
+		<meta name="x5-fullscreen" content="true">
+		  <!-- UC应用模式 -->
+		<meta name="browsermode" content="application">
+		  <!-- QQ应用模式 -->
+		<meta name="x5-page-mode" content="app">
+		  <!-- windows phone 点击无高光 -->
+		<meta name="msapplication-tap-highlight" content="no">
+		<title>找回密码</title>
+		<script>
+			(function (doc, win) {
+		        var docEl = doc.documentElement,
+		            resizeEvt = 'orientationchange' in window ? 'orientationchange' : 'resize',
+		            recalc = function () {
+		                var clientWidth = docEl.clientWidth;
+		                if (!clientWidth) return;
+		                if(clientWidth>=750){
+		                    docEl.style.fontSize = '100px';
+		                }else{
+		                    docEl.style.fontSize = 100 * (clientWidth / 750) + 'px';
+		                }
+		            };
+		
+		        if (!doc.addEventListener) return;
+		        win.addEventListener(resizeEvt, recalc, false);
+		        doc.addEventListener('DOMContentLoaded', recalc, false);
+		    })(document, window);
+		</script>
+		<link rel="stylesheet" href="css/loginr.css" />
+		<script type="text/javascript" src="js/jquery-1.8.3.min.js"></script>
+	</head>
+	<body>
+		<div class="loginban">
+			<div class="h-130"></div>
+			<figure>
+				<img src="img/loginban.png"/>
+			</figure>
+			<div class="h-130"></div>
+		</div>
+		<!--back-->
+		<div class="backConW">
+			<div class="backConP">
+				<div class="h-85"></div>
+				<div class="backpsdW">
+					<form id="backForm">
+						<div class="h-70"></div>
+						<div class="titw">找回账号密码</div>
+						<div class="h-35"></div>
+						<div class="section">
+							<input type="number" name="tel" placeholder="输入您的手机号码" />
+						</div>
+						<div class="h-20"></div>
+						<div class="code clearfix">
+							<input type="number" name="verify" placeholder="输入短信验证码" class="fl inp"/>
+							<div class="gaincode fr">
+								<input type="button" id="gaincodebtn" value="验证码"/> 
+							</div>
+						</div>
+						<div class="h-20"></div>
+						<div class="section">
+							<input type="password" name="psd" placeholder="输入新的登录密码" />
+						</div>
+						<div class="h-30"></div>
+						<div class="backbtn">
+							<a href="javascript:;">提交</a>
+						</div>
+					</form>
+				</div>
+			</div>
+		</div>
+	</body>
+	<script type="text/javascript">
+		
+		$(".backbtn").click(function(){
+			backpsdFun();
+		});
+		var backpsdFun = function(){
+			var backForm = document.getElementById("backForm");
+			var tel = backForm.tel.value;
+			var verify = backForm.verify.value;
+			var psd = backForm.psd.value;
+			var warn = "";
+			if(tel == ""){
+				warn = "请输入手机号码";
+				//console.log(warn);
+				return;
+			}
+			if(!/(^1[3|5|8][0-9]{9}$)/.test(tel)){
+				warn = "手机格式不正确";
+				//console.log(warn);
+				return;
+			}
+			if(varify == ""){
+				warn = "验证码不能为空";
+				//console.log(warn);
+				return;
+			}
+			if(psd == ""){
+				warn = "请输入新密码";
+				//console.log(warn);
+				return;
+			}
+			if(/(^1[3|5|8][0-9]{9}$)/.test(tel) && psd != "" && varify != ""){
+				$.ajax({
+					type:"post",
+					url:"",
+					dataType:"json",
+					data:{tel:tel,psd:psd},
+					async:true,
+					success:function(data){
+						
+					}
+				})
+			}
+		}
+		$("#gaincodebtn").click(function(){
+			sendTime();
+		})
+		function sendTime(){
+			var backForm = document.getElementById("backForm");
+			var tel = backForm.tel.value;
+			if(!/(^1[3|5|8][0-9]{9}$)/.test(tel)){
+				return false;
+			}else{
+				console.log(123)
+				var time = 30;
+				function timeCountDown(){
+					if(time==0){
+						$('#gaincodebtn').removeAttr("disabled");
+						$('#gaincodebtn').val("验证码");
+						clearInterval(timer);
+						return true;
+					}
+					$('#gaincodebtn').attr("disabled","disabled");
+					$('#gaincodebtn').val(time+"秒");
+					time--;
+					return false;
+				}
+				timeCountDown();
+				var timer = setInterval(timeCountDown,1000);
+			}
+		}
+</script>
+</html>

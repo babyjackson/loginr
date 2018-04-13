@@ -1,0 +1,347 @@
+<!DOCTYPE html>
+<html>
+	<head>
+		<meta charset="UTF-8">
+		<meta name="viewport" content="width=device-width,initial-scale=1.0,maximum-scale=1,user-scalable=no">
+		<meta name="renderer" content="webkit">
+		<meta http-equiv="Cache-Control" content="no-siteapp"/>
+		  <!-- 启用360浏览器的极速模式(webkit) -->
+		<meta name="renderer" content="webkit">
+		  <!-- 避免IE使用兼容模式 -->
+		<meta http-equiv="X-UA-Compatible" content="IE=edge">
+		  <!-- 针对手持设备优化，主要是针对一些老的不识别viewport的浏览器，比如黑莓 -->
+		<meta name="HandheldFriendly" content="true">
+		  <!-- 微软的老式浏览器 -->
+		<meta name="MobileOptimized" content="320">
+		  <!-- uc强制竖屏 -->
+		<meta name="screen-orientation" content="portrait">
+		  <!-- QQ强制竖屏 -->
+		<meta name="x5-orientation" content="portrait">
+		  <!-- UC强制全屏 -->
+		<meta name="full-screen" content="yes">
+		  <!-- QQ强制全屏 -->
+		<meta name="x5-fullscreen" content="true">
+		  <!-- UC应用模式 -->
+		<meta name="browsermode" content="application">
+		  <!-- QQ应用模式 -->
+		<meta name="x5-page-mode" content="app">
+		  <!-- windows phone 点击无高光 -->
+		<meta name="msapplication-tap-highlight" content="no">
+		<title>注册</title>
+		<script>
+			(function (doc, win) {
+		        var docEl = doc.documentElement,
+		            resizeEvt = 'orientationchange' in window ? 'orientationchange' : 'resize',
+		            recalc = function () {
+		                var clientWidth = docEl.clientWidth;
+		                if (!clientWidth) return;
+		                if(clientWidth>=750){
+		                    docEl.style.fontSize = '100px';
+		                }else{
+		                    docEl.style.fontSize = 100 * (clientWidth / 750) + 'px';
+		                }
+		            };
+		
+		        if (!doc.addEventListener) return;
+		        win.addEventListener(resizeEvt, recalc, false);
+		        doc.addEventListener('DOMContentLoaded', recalc, false);
+		    })(document, window);
+		</script>
+		<link rel="stylesheet" href="css/LArea.css" />
+		<link rel="stylesheet" href="css/loginr.css" />
+		<script type="text/javascript" src="js/jquery-1.8.3.min.js"></script>
+	</head>
+	<body>
+		<div class="loginban">
+			<div class="h-130"></div>
+			<figure>
+				<img src="img/loginban.png"/>
+			</figure>
+			<div class="h-130"></div>
+		</div>
+		<div class="registerConW">
+			<div class="registerConP">
+				<div class="h-85"></div>
+				<div class="registerW">
+					<div class="h-35"></div>
+					<ul class="titChange clearfix">
+						<li class="on fl">个人用户</li>
+						<li class="fr">企业入驻</li>
+					</ul>
+					<!--个人用户-->
+					<div class="register register_gr">
+						<form id="personForm">
+							<div class="h-20"></div>
+							<div class="section">
+								<input type="number" name="ptel" placeholder="输入您的手机号码" />
+							</div>
+							<div class="h-20"></div>
+							<div class="code clearfix">
+								<input type="number" name="pverify" placeholder="输入短信验证码" class="fl inp"/>
+								<div class="gaincode fr">
+									<input type="button" id="pgaincodebtn" value="验证码"/> 
+								</div>
+							</div>
+							<div class="h-20"></div>
+							<div class="section">
+								<input type="password" name="ppsd" placeholder="设置登录密码" />
+							</div>
+							<div class="h-30"></div>
+							<div class="agreed">
+								<small class="checked fl"><input type="checkbox" name="agreed" checked="checked"/></small>
+								我同意<a href="javascript:;">《金属照片个人服务》</a>
+							</div>
+							<div class="h-35"></div>
+							<div class="grregisterbtn registerbtn">
+								<a href="javascript:;">立即注册</a>
+							</div>
+							<div class="h-50"></div>
+						</form>
+					</div>
+					<!--企业入驻-->
+					<div class="register register_qy" style="display: none;">
+						<form id="firmForm">
+							<div class="h-20"></div>
+							<div class="section">
+								<input type="number" name="ctel" placeholder="输入您的手机号码" />
+							</div>
+							<div class="h-20"></div>
+							<div class="code clearfix">
+								<input type="number" name="cverify" placeholder="输入短信验证码" class="fl inp"/>
+								<div class="gaincode fr">
+									<input type="button" id="cgaincodebtn" value="验证码"/> 
+								</div>
+							</div>
+							<div class="h-20"></div>
+							<div class="section">
+								<input type="password" name="cpsd" placeholder="设置登录密码" />
+							</div>
+							<div class="h-20"></div>
+							<div class="section">
+								<input type="text" name="cname" placeholder="企业名称" />
+							</div>
+							<div class="h-20"></div>
+							<div class="section">
+								<input type="text" name="cemail" placeholder="电子邮件" />
+							</div>
+							<div class="h-20"></div>
+							<!--地址选择-->
+							<div class="section choose">
+								<input id="chooseLa" type="text" readonly="" placeholder="——请选择——"  value=""/>
+								<input id="valuechoose" type="hidden" value="" name="chooseaddr"/>
+							</div>
+							<div class="h-20"></div>
+							<!--详细地址-->
+							<div class="section">
+								<input type="text" name="caddress" placeholder="填写详细的地址"/>
+							</div>
+							<div class="h-20"></div>
+							<div class="agreed">
+								<small class="checked fl"><input type="checkbox" name="agreed" checked="checked"/></small>
+								我同意<a href="javascript:;">《金属照片个人服务》</a>
+							</div>
+							<div class="h-30"></div>
+							<div class="qyregisterbtn registerbtn">
+								<a href="javascript:;">立即注册</a>
+							</div>
+							<div class="h-50"></div>
+						</form>
+					</div>
+				</div>
+			</div>
+		</div>
+	</body>
+	<script src="js/LAreaData.js"></script>
+	<script src="js/LArea.js"></script>
+	<script type="text/javascript">
+		$(".register_gr .agreed small").click(function(){
+			$(this).toggleClass("checked");
+		});
+		$(".register_qy .agreed small").click(function(){
+			$(this).toggleClass("checked");
+		});
+		$(".titChange>li").click(function(){
+			var inx = $(this).index();
+			$(this).addClass("on").siblings().removeClass("on");
+			$(".register").hide(0);
+			$(".register").eq(inx).show(0);
+		});
+		/***选择地址**/
+		var choosearea = new LArea();
+	    choosearea.init({
+	        'trigger': '#chooseLa', //触发选择控件的文本框，同时选择完毕后name属性输出到该位置
+	        'valueTo': '#valuechoose', //选择完毕后id属性输出到该位置
+	        'keys': {
+	            id: 'id',
+	            name: 'name'
+	        }, //绑定数据源相关字段 id对应valueTo的value属性输出 name对应trigger的value属性输出
+	        'type': 1, //数据源类型
+	        'data': LAreaData //数据源
+	    });
+	    
+	    /**个人注册***/
+	   $(".grregisterbtn").click(function(){
+			personRegister();
+		});
+		var personRegister = function(){
+			var personForm = document.getElementById("personForm");
+			var ptel = personForm.ptel.value;
+			var pverify = personForm.pverify.value;
+			var ppsd = personForm.ppsd.value;
+			var warn = "";
+			if(ptel == ""){
+				warn = "请输入手机号码";
+				//console.log(warn);
+				return;
+			}
+			if(!/(^1[3|5|8][0-9]{9}$)/.test(ptel)){
+				warn = "手机格式不正确";
+				//console.log(warn);
+				return;
+			}
+			if(pvarify == ""){
+				warn = "验证码不能为空";
+				//console.log(warn);
+				return;
+			}
+			if(ppsd == ""){
+				warn = "请输入新密码";
+				//console.log(warn);
+				return;
+			}
+			if(/(^1[3|5|8][0-9]{9}$)/.test(ptel) && ppsd != "" && pvarify != ""){
+				$.ajax({
+					type:"post",
+					url:"",
+					dataType:"json",
+					data:{ptel:ptel,ppsd:ppsd},
+					async:true,
+					success:function(data){
+						
+					}
+				})
+			}
+		}
+		$("#pgaincodebtn").click(function(){
+			psendTime();
+		})
+		function psendTime(){
+			var personForm = document.getElementById("personForm");
+			var ptel = personForm.ptel.value;
+			if(!/(^1[3|5|8][0-9]{9}$)/.test(ptel)){
+				return false;
+			}else{
+				console.log(123)
+				var time = 30;
+				function timeCountDown(){
+					if(time==0){
+						$('#pgaincodebtn').removeAttr("disabled");
+						$('#pgaincodebtn').val("验证码");
+						clearInterval(timer);
+						return true;
+					}
+					$('#pgaincodebtn').attr("disabled","disabled");
+					$('#pgaincodebtn').val(time+"秒");
+					time--;
+					return false;
+				}
+				timeCountDown();
+				var timer = setInterval(timeCountDown,1000);
+			}
+		}
+		/***企业注册***/
+		$(".qyregisterbtn").click(function(){
+			firmRegister();
+		});
+		var firmRegister = function(){
+			var firmForm = document.getElementById("firmForm");
+			var ctel = firmForm.ctel.value;
+			var cverify = firmForm.cverify.value;
+			var cpsd = firmForm.cpsd.value;
+			var cname = firmForm.cname.value;
+			var cemail = firmForm.cemail.value;
+			var caddress = firmForm.caddress.value;
+			var regemial = /^([a-zA-Z0-9]+[_|\-|\.]?)*[a-zA-Z0-9]+@([a-zA-Z0-9]+[_|\-|\.]?)*[a-zA-Z0-9]+\.[a-zA-Z]{2,3}$/gi;
+			var warn = "";
+			var chooseaddr = firmForm.chooseaddr.value;
+			if(ctel == ""){
+				warn = "请输入手机号码";
+				//console.log(warn);
+				return;
+			}
+			if(!/(^1[3|5|8][0-9]{9}$)/.test(ctel)){
+				warn = "手机格式不正确";
+				//console.log(warn);
+				return;
+			}
+			if(cvarify == ""){
+				warn = "验证码不能为空";
+				//console.log(warn);
+				return;
+			}
+			if(cpsd == ""){
+				warn = "请输入新密码";
+				//console.log(warn);
+				return;
+			}
+			if(cname == ""){
+				warn = "请输入企业名称";
+				//console.log(warn);
+				return;
+			}
+			if(cemail == ""){
+				warn = "电子邮件不能为空";
+				//console.log(warn);
+				return;
+			}
+			if(!regemial.test(cemail)){
+				warn = "电子邮件格式不正确";
+				return;
+			}
+			if(chooseaddr == ""){
+				warn = "请选择地址";
+			}
+			if(caddress == ""){
+				warn = "请输入详细地址";
+			}
+			if(/(^1[3|5|8][0-9]{9}$)/.test(ctel) && cpsd != "" && cvarify != "" && regemial.test(cemail)){
+				$.ajax({
+					type:"post",
+					url:"",
+					dataType:"json",
+					data:{ctel:ctel,cpsd:cpsd,cname:cname,cemail:cemail,caddress:caddress},
+					async:true,
+					success:function(data){
+						
+					}
+				})
+			}
+		}
+		$("#cgaincodebtn").click(function(){
+			csendTime();
+		})
+		function csendTime(){
+			var personForm = document.getElementById("personForm");
+			var ptel = personForm.ptel.value;
+			if(!/(^1[3|5|8][0-9]{9}$)/.test(ptel)){
+				return false;
+			}else{
+				var time = 30;
+				function timeCountDown(){
+					if(time==0){
+						$('#cgaincodebtn').removeAttr("disabled");
+						$('#cgaincodebtn').val("验证码");
+						clearInterval(timer);
+						return true;
+					}
+					$('#cgaincodebtn').attr("disabled","disabled");
+					$('#cgaincodebtn').val(time+"秒");
+					time--;
+					return false;
+				}
+				timeCountDown();
+				var timer = setInterval(timeCountDown,1000);
+			}
+		}
+	</script>
+</html>
